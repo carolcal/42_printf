@@ -6,7 +6,7 @@
 /*   By: cayamash <cayamash@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 10:40:56 by cayamash          #+#    #+#             */
-/*   Updated: 2024/11/18 16:41:13 by cayamash         ###   ########.fr       */
+/*   Updated: 2024/11/18 18:42:13 by cayamash         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	ft_putstr(char *s)
 {
 	int	i;
 
+	if (!s)
+		s = "(null)";
 	i = 0;
 	while (s[i] != '\0')
 		i++;
@@ -29,29 +31,24 @@ int	ft_putstr(char *s)
 	return (i);
 }
 
-int	ft_putnbr_base(long long nbr, char *base, int div)
+int	ft_putbase(long long n, char *base, int div)
 {
 	int		i;
 	int		count;
-	char	str[11];
+	char	c;
 
 	i = 0;
 	count = 0;
-	if (nbr < 0)
+	if (n < 0 && div == 10)
 	{
 		write (1, "-", 1);
 		count ++;
-		nbr = -nbr;
+		n = -n;
 	}
-	while (nbr > 0)
-	{
-		str[i++] = base[nbr % div];
-		count++;
-		nbr /= div;
-	}
-	i--;
-	while (i >= 0)
-		write(1, &str[i--], 1);
+	c = base[n % div];
+	if (n >= div)
+		count += ft_putbase(n / div, base, div);
+	count += ft_putchar(c);
 	return (count);
 }
 

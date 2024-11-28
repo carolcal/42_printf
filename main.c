@@ -13,7 +13,6 @@
 #include "ft_printf.h"
 #include <stdio.h>
 
-// Prototipo do seu ft_printf
 int ft_printf(const char *format, ...);
 
 int main()

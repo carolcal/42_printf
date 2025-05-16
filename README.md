@@ -1,15 +1,15 @@
 # Printf
 
 **Printf** is a project at 42 School that implements a custom version of the `printf` function from `stdio.h` library. The goal is to implement the following convertions:
-  - %c - Prints a single character.
-  - %s - Prints a string.
-  - %p - Prints the address of a pointer in hexadecimal.
-  - %d - Prints a signed decimal integer (base 10).
-  - %i - Prints a signed integer (base 10).
-  - %u - Prints an unsigned decimal integer (base 10).
-  - %x - Prints a hexadecimal number (lowercase).
-  - %X - Prints a hexadecimal number (uppercase).
-  - %% - Prints a percentage sign.
+    - `%c`: Prints a single character.
+    - `%s`: Prints a string.
+    - `%p`: Prints the address of a pointer in hexadecimal.
+    - `%d`: Prints a signed decimal integer (base 10).
+    - `%i`: Prints a signed integer (base 10).
+    - `%u`: Prints an unsigned decimal integer (base 10).
+    - `%x`: Prints a hexadecimal number (lowercase).
+    - `%X`: Prints a hexadecimal number (uppercase).
+    - `%%`: Prints a percentage sign.
 
 ## Functions Overview
 

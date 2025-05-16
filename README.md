@@ -38,4 +38,8 @@
 To compile the project, simply run:
 ```shell
 make
+cc main.c -L. -lftprintf -I. -o test_printf
 ```
+![Program Demo](https://github.com/user-attachments/assets/fb3918cf-4de6-42af-93ae-5c7a28c0b299)
+
+

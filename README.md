@@ -1,38 +1,41 @@
 # Printf
 
-**Printf** is a project at 42 School that implements a function similar to printf function from `stdio.h` library. The goal is to implement the following convertions:
-  - %c Prints a single character.
-  - %s Prints a sting.
-  - %p Prints the address of a pointer in hexadecimal.
-  - %d Prints a decimal number (base 10).
-  - %i Prints a int (base 10).
-  - %u Prints a decimal number (base 10) without signal.
-  - %x Prints an hexadecimal number (base 16) in lower case.
-  - %X Prints an hexadecimal number (base 16) in upper case.
-  - %% Prints percentage.
+**Printf** is a project at 42 School that implements a custom version of the `printf` function from `stdio.h` library. The goal is to implement the following convertions:
+  - %c - Prints a single character.
+  - %s - Prints a string.
+  - %p - Prints the address of a pointer in hexadecimal.
+  - %d - Prints a signed decimal integer (base 10).
+  - %i - Prints a signed integer (base 10).
+  - %u - Prints an unsigned decimal integer (base 10).
+  - %x - Prints a hexadecimal number (lowercase).
+  - %X - Prints a hexadecimal number (uppercase).
+  - %% - Prints a percentage sign.
 
 ## Functions Overview
 
 - **`ft_printf(const char *str, ...)`**: 
-  - The core function of this project, `ft_printf` receives the string and the variables.
-  - Initializes `va_list args` using `va_start` function.
-  - Loops throw the string printing each char or and calling `ft_verify` function when char is `%`.
-  - Returns the number of printed characters
+  - The main function of the project.
+  - Takes a format string and a variable number of arguments.
+  - Initializes `va_list args` using `va_start`.
+  - Iterates through the format string, printing characters or calling `ft_verify` when encountering `%`.
+  - Returns the total number of printed characters.
 
 - **`ft_verify`**:
-  - Verify if the next character is in the list of convertions and calling the respective function responsible to convert and print its argument. The va_list type makes sure that the program will always call for the next argument on the list.
-  - Receives from each function the number of printed chars and returns it to the main function.
+  - Checks if the character after `%` is a valid conversion specifier.
+  - Calls the corresponding function to process and print the argument.
+  - Uses `va_list` to fetch the appropriate argument.
+  - Returns the number of characters printed for that conversion.
 
 ### Utility Functions
 
 - **`ft_putchar(char c)`**: Prints a single char and returns 1.
-- **`ft_putstr(char *s)`**: Prints a string and returns its size.
-- **`ft_putbase(long long n, char *base, int div)`**: Converts a number to a given base, prints it and returns its size.
-- **`ft_putpointer(unsigned long p)`**: Receives a long, converts it to hexadecimal base, prints it and returns its size
+- **`ft_putstr(char *s)`**: Prints a string and returns its length.
+- **`ft_putbase(long long n, char *base, int div)`**: Converts a number to a given base, prints it, and returns the number of printed characters.
+- **`ft_putpointer(unsigned long p)`**: Converts a pointer to a hexadecimal string, prints it, and returns the number of printed characters.
 
 ## Compilation and Usage
 
-Just run make command on the terminal
+To compile the project, simply run:
 ```shell
 make
 ```

@@ -1,4 +1,4 @@
-# Get Next Line
+# Printf
 
 **Printf** is a project at 42 School implements a function similar to printf function from stdio library. The goal is to implement the following convertions:
   - %c Prints a single character.

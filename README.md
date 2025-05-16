@@ -1,6 +1,6 @@
 # Printf
 
-**Printf** is a project at 42 School implements a function similar to printf function from stdio library. The goal is to implement the following convertions:
+**Printf** is a project at 42 School that implements a function similar to printf function from `stdio.h` library. The goal is to implement the following convertions:
   - %c Prints a single character.
   - %s Prints a sting.
   - %p Prints the address of a pointer in hexadecimal.
@@ -16,11 +16,12 @@
 - **`ft_printf(const char *str, ...)`**: 
   - The core function of this project, `ft_printf` receives the string and the variables.
   - Initializes `va_list args` using `va_start` function.
-  - Loops throw the string printing each char or and calling `ft_verify` function when char is `%`
+  - Loops throw the string printing each char or and calling `ft_verify` function when char is `%`.
   - Returns the number of printed characters
 
 - **`ft_verify`**:
-  - Verify if the next character is in the list of convertions calling the respective function responsible to convert its argument. The va_list type makes sure that the program will always call for the next argument on the list.
+  - Verify if the next character is in the list of convertions and calling the respective function responsible to convert and print its argument. The va_list type makes sure that the program will always call for the next argument on the list.
+  - Receives from each function the number of printed chars and returns it to the main function.
 
 ### Utility Functions
 

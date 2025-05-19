@@ -35,11 +35,16 @@
 
 ## Compilation and Usage
 
-To compile the project, simply run:
+To test the library, you can simply run:
 ```shell
 make
 cc main.c -L. -lftprintf -I. -o test_printf
+./test_printf
 ```
+This will compile and run a test program using the `main.c` file, which contains some sample tests.
+
+Alternatively, you can include the library in your own project and use the `ft_printf` function as a drop-in replacement for `printf`.
+
 ![Program Demo](https://github.com/user-attachments/assets/fb3918cf-4de6-42af-93ae-5c7a28c0b299)
 
 
